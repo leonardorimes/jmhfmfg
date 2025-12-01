@@ -29,6 +29,10 @@ const translations = {
     "hero.community": "Comunidade",
     "hero.title": "Terra Ventos",
     "hero.subtitle": "Onde investir é viver",
+    "hero.bitupita": "Bitupitá:",
+    "hero.refuge": "Seu Refúgio Particular.",
+    "hero.best-investment": "Seu Melhor Investimento.",
+    "hero.discover-paradise": "Descubra o paraíso intocado do litoral cearense e garanta seu lugar neste destino exclusivo.",
     "hero.description":
       "Junte-se a uma rede exclusiva de investidores, kitesurfistas e amantes do litoral nordestino. Acesso antecipado a oportunidades imobiliárias, curadoria jurídica e um lifestyle conectado ao vento e ao mar.",
     "hero.cta": "Junte-se à Comunidade",
@@ -55,7 +59,7 @@ const translations = {
     "solution.see.how": "Entre agora na comunidade",
 
     // Benefits Section
-    "benefits.title": "Benefícios Exclusivos",
+    "benefits.title": "O Equilíbrio Perfeito",
     "benefits.subtitle": "Por que fazer parte da Terra Ventos",
 
     // Stats Section
@@ -149,8 +153,11 @@ const translations = {
     // Benefits Section
     "benefits.exclusive": "Acesso Exclusivo",
     "benefits.exclusive.free": "100% Gratuito",
+    "benefits.exclusive.area": "Área total de pura exclusividade no lufar disso",
     "benefits.exclusive.desc":
       "Receba as oportunidades do mercado de forma antecipada",
+    "benefits.constructive.area": "Área construtiva para seu projeto",
+    "benefits.green.area": "Área verde preservada",
     "benefits.network": "Networking Global",
     "benefits.network.desc":
       "Se conecte com investidores e atletas do Brasil e do mundo",
@@ -162,6 +169,67 @@ const translations = {
       "Participe de eventos onlines, presenciais e ativações da comunidade",
     "benefits.concierge": "Atendimento Consultivo",
     "benefits.concierge.desc": "Concierge de investimento e suporte bilingue.",
+
+    // Technical Specifications
+    "technical.ideal-space": "O espaço ideal para um projeto de vida, uma pousada de charme ou simplesmente para ver seu patrimônio crescer com frente mar livre.",
+    "technical.specs": "Ficha Técnica",
+    "technical.total-area": "Área Total",
+    "technical.total-area.note": "(incluso marinha)",
+    "technical.total-area.value": "4.300 m²",
+    "technical.beach-front": "Frente Mar",
+    "technical.beach-front.note": "(Pé na areia)",
+    "technical.beach-front.value": "14,32 metros",
+    "technical.street-front": "Frente Rua",
+    "technical.street-front.value": "10,00 metros",
+    "technical.depth": "Profundidade Aproximada",
+    "technical.depth.value": "O terreno tem mais de 146 metros de extensão em suas laterais",
+
+    // Investment Options
+    "investment.title": "Opções Flexíveis de Investimento",
+    "investment.lot-250": "Lote 250m²",
+    "investment.lot-500": "Lote 500m²",
+    "investment.label": "Investimento",
+    "investment.lot-250.desc": "Perfeito para um bangalô ou chalé de praia.",
+    "investment.lot-500.desc": "Ideal para casas maiores com área de lazer privativa.",
+    "investment.site-plan": "01 PLANTA DE SITUAÇÃO - Escala 1:500",
+
+    // Next Frontier
+    "frontier.title": "A Próxima Fronteira de Valorização",
+    "frontier.text1": "Bitupitá não é apenas um destino paradisíaco intocado; é a próxima fronteira de valorização no litoral do Ceará, a 10 minutos de Curimãs.",
+    "frontier.text2": "Estamos oferecendo a chance de adquirir um terreno \"pé na areia\" em uma localização privilegiada, antes que os preços sigam a tendência de alta da região vizinha.",
+
+    // Analyzing Opportunity
+    "analyzing.title": "Analisando a oportunidade",
+    "analyzing.item1": "Acesso direto a praia, e entrada segura pela rua",
+    "analyzing.item2": "Documentação revisada",
+    "analyzing.item3": "6 meses de vento constante para Kitesurf/Foil",
+    "analyzing.item4": "Compra direta com o proprietário",
+    "analyzing.item5": "Valor m² abaixo do mercado",
+    "analyzing.item6": "Próximo a Curimãs",
+    "analyzing.item7": "Alta valorização da região",
+    "analyzing.item8": "Apenas 8 terrenos, projeto exclusivo",
+    "analyzing.highlight": "A estimativa conservadora é de uma valorização muito positiva de pelo menos 20% anual, acompanhando o desenvolvimento turístico local, impulsionado por esportes como o Kitesurfe.",
+
+    // Know Bitupitá
+    "know.title": "Conheça Bitupitá",
+    "know.location": "Localização",
+    "know.location.link": "Ver no Google Maps",
+    "know.location.desc": "Acesse o mapa e descubra a localização privilegiada deste paraíso.",
+    "know.video": "Vídeo do Local",
+    "know.video.link": "Assista no Instagram",
+    "know.video.desc": "Veja imagens reais e apaixone-se por Bitupitá.",
+
+    // Paradise Awaits
+    "paradise.title": "Seu paraíso espera por você!",
+    "paradise.cta": "Garanta seu lugar ao sol (e ao vento): Não espere a valorização acontecer para decidir. Antecipe-se!",
+    "paradise.contact": "Fale conosco por Tel/Whatsapp ou Envie um email",
+    "paradise.offering": "Oferecimento: Terra Ventos",
+    "paradise.ceo": "CEO, Terra Ventos",
+
+    // Language Selector
+    "language.portuguese": "Português",
+    "language.english": "We speak English",
+    "language.spanish": "Hablamos Español",
 
     // Stats Section
     "stats.experience": "Anos de Experiência",
@@ -196,6 +264,10 @@ const translations = {
     "hero.community": "Community",
     "hero.title": "Terra Ventos",
     "hero.subtitle": "Where investing is living",
+    "hero.bitupita": "Bitupitá:",
+    "hero.refuge": "Your Private Refuge.",
+    "hero.best-investment": "Your Best Investment.",
+    "hero.discover-paradise": "Discover the untouched paradise of the Ceará coast and secure your place in this exclusive destination.",
     "hero.description":
       "Join an exclusive network of investors, kitesurfers and lovers of the northeastern coast. Early access to real estate opportunities, legal curation and lifestyle connected to wind and sea.",
     "hero.cta": "Join the Community",
@@ -222,7 +294,7 @@ const translations = {
     "solution.see.how": "Join the community now",
 
     // Benefits Section
-    "benefits.title": "Exclusive Benefits",
+    "benefits.title": "The Perfect Balance",
     "benefits.subtitle": "Why join Terra Ventos",
 
     // Stats Section
@@ -316,7 +388,10 @@ const translations = {
     // Benefits Section
     "benefits.exclusive": "Exclusive Access",
     "benefits.exclusive.free": "100% Free",
+    "benefits.exclusive.area": "Total area of pure exclusivity",
     "benefits.exclusive.desc": "Receive market opportunities in advance",
+    "benefits.constructive.area": "Constructive area for your project",
+    "benefits.green.area": "Preserved green area",
     "benefits.network": "Global Networking",
     "benefits.network.desc":
       "Connect with investors and athletes from Brazil and around the world",
@@ -328,6 +403,67 @@ const translations = {
       "Participate in online, in-person events and community activations",
     "benefits.concierge": "Consultive Service",
     "benefits.concierge.desc": "Investment concierge and bilingual support.",
+
+    // Technical Specifications
+    "technical.ideal-space": "The ideal space for a life project, a charming inn, or simply to watch your assets grow with free beachfront.",
+    "technical.specs": "Technical Specifications",
+    "technical.total-area": "Total Area",
+    "technical.total-area.note": "(including marine)",
+    "technical.total-area.value": "4,300 m²",
+    "technical.beach-front": "Beach Front",
+    "technical.beach-front.note": "(Feet in the sand)",
+    "technical.beach-front.value": "14.32 meters",
+    "technical.street-front": "Street Front",
+    "technical.street-front.value": "10.00 meters",
+    "technical.depth": "Approximate Depth",
+    "technical.depth.value": "The land has more than 146 meters of extension on its sides",
+
+    // Investment Options
+    "investment.title": "Flexible Investment Options",
+    "investment.lot-250": "Lot 250m²",
+    "investment.lot-500": "Lot 500m²",
+    "investment.label": "Investment",
+    "investment.lot-250.desc": "Perfect for a bungalow or beach chalet.",
+    "investment.lot-500.desc": "Ideal for larger houses with private leisure area.",
+    "investment.site-plan": "01 SITE PLAN - Scale 1:500",
+
+    // Next Frontier
+    "frontier.title": "The Next Frontier of Appreciation",
+    "frontier.text1": "Bitupitá is not just an untouched paradise destination; it is the next frontier of appreciation on the Ceará coast, 10 minutes from Curimãs.",
+    "frontier.text2": "We are offering the chance to acquire a \"feet in the sand\" land in a privileged location, before prices follow the upward trend of the neighboring region.",
+
+    // Analyzing Opportunity
+    "analyzing.title": "Analyzing the opportunity",
+    "analyzing.item1": "Direct access to the beach, and safe entrance from the street",
+    "analyzing.item2": "Reviewed documentation",
+    "analyzing.item3": "6 months of constant wind for Kitesurf/Foil",
+    "analyzing.item4": "Direct purchase from the owner",
+    "analyzing.item5": "Price per m² below market",
+    "analyzing.item6": "Close to Curimãs",
+    "analyzing.item7": "High appreciation of the region",
+    "analyzing.item8": "Only 8 lots, exclusive project",
+    "analyzing.highlight": "The conservative estimate is a very positive appreciation of at least 20% annually, following local tourist development, driven by sports such as Kitesurfing.",
+
+    // Know Bitupitá
+    "know.title": "Get to Know Bitupitá",
+    "know.location": "Location",
+    "know.location.link": "View on Google Maps",
+    "know.location.desc": "Access the map and discover the privileged location of this paradise.",
+    "know.video": "Location Video",
+    "know.video.link": "Watch on Instagram",
+    "know.video.desc": "See real images and fall in love with Bitupitá.",
+
+    // Paradise Awaits
+    "paradise.title": "Your paradise awaits you!",
+    "paradise.cta": "Secure your place in the sun (and wind): Don't wait for appreciation to happen to decide. Get ahead!",
+    "paradise.contact": "Contact us by Tel/WhatsApp or Send an email",
+    "paradise.offering": "Offered by: Terra Ventos",
+    "paradise.ceo": "CEO, Terra Ventos",
+
+    // Language Selector
+    "language.portuguese": "Português",
+    "language.english": "We speak English",
+    "language.spanish": "Hablamos Español",
 
     // Stats Section
     "stats.experience": "Years of Experience",
@@ -362,6 +498,10 @@ const translations = {
     "hero.community": "Comunidad",
     "hero.title": "Terra Ventos",
     "hero.subtitle": "Donde invertir es vivir",
+    "hero.bitupita": "Bitupitá:",
+    "hero.refuge": "Tu Refugio Privado.",
+    "hero.best-investment": "Tu Mejor Inversión.",
+    "hero.discover-paradise": "Descubre el paraíso intacto de la costa de Ceará y asegura tu lugar en este destino exclusivo.",
     "hero.description":
       "Únete a una red exclusiva de inversionistas, kitesurfistas y amantes de la costa noreste. Acceso anticipado a oportunidades inmobiliarias, curaduría legal y estilo de vida conectado al viento y al mar.",
     "hero.cta": "Únete a la Comunidad",
@@ -388,7 +528,7 @@ const translations = {
     "solution.see.how": "Únete a la comunidad ahora",
 
     // Benefits Section
-    "benefits.title": "Beneficios Exclusivos",
+    "benefits.title": "El Equilibrio Perfecto",
     "benefits.subtitle": "Por qué unirse a Terra Ventos",
 
     // Stats Section
@@ -482,8 +622,11 @@ const translations = {
     // Benefits Section
     "benefits.exclusive": "Acceso Exclusivo",
     "benefits.exclusive.free": "100% Gratuito",
+    "benefits.exclusive.area": "Área total de pura exclusividad",
     "benefits.exclusive.desc":
       "Recibe las oportunidades del mercado de forma anticipada",
+    "benefits.constructive.area": "Área constructiva para tu proyecto",
+    "benefits.green.area": "Área verde preservada",
     "benefits.network": "Networking Global",
     "benefits.network.desc":
       "Conéctate con inversionistas y atletas de Brasil y del mundo",
@@ -495,6 +638,67 @@ const translations = {
       "Participa en eventos en línea, presenciales y activaciones de la comunidad",
     "benefits.concierge": "Servicio Consultivo",
     "benefits.concierge.desc": "Concierge de inversión y soporte bilingüe.",
+
+    // Technical Specifications
+    "technical.ideal-space": "El espacio ideal para un proyecto de vida, una posada con encanto o simplemente para ver crecer su patrimonio con frente al mar libre.",
+    "technical.specs": "Ficha Técnica",
+    "technical.total-area": "Área Total",
+    "technical.total-area.note": "(incluido marino)",
+    "technical.total-area.value": "4.300 m²",
+    "technical.beach-front": "Frente al Mar",
+    "technical.beach-front.note": "(Pies en la arena)",
+    "technical.beach-front.value": "14,32 metros",
+    "technical.street-front": "Frente a la Calle",
+    "technical.street-front.value": "10,00 metros",
+    "technical.depth": "Profundidad Aproximada",
+    "technical.depth.value": "El terreno tiene más de 146 metros de extensión en sus laterales",
+
+    // Investment Options
+    "investment.title": "Opciones Flexibles de Inversión",
+    "investment.lot-250": "Lote 250m²",
+    "investment.lot-500": "Lote 500m²",
+    "investment.label": "Inversión",
+    "investment.lot-250.desc": "Perfecto para un bungalow o chalet de playa.",
+    "investment.lot-500.desc": "Ideal para casas más grandes con área de ocio privada.",
+    "investment.site-plan": "01 PLANO DE SITUACIÓN - Escala 1:500",
+
+    // Next Frontier
+    "frontier.title": "La Próxima Frontera de Valorización",
+    "frontier.text1": "Bitupitá no es solo un destino paradisíaco intacto; es la próxima frontera de valorización en la costa de Ceará, a 10 minutos de Curimãs.",
+    "frontier.text2": "Estamos ofreciendo la oportunidad de adquirir un terreno \"pies en la arena\" en una ubicación privilegiada, antes de que los precios sigan la tendencia alcista de la región vecina.",
+
+    // Analyzing Opportunity
+    "analyzing.title": "Analizando la oportunidad",
+    "analyzing.item1": "Acceso directo a la playa, y entrada segura por la calle",
+    "analyzing.item2": "Documentación revisada",
+    "analyzing.item3": "6 meses de viento constante para Kitesurf/Foil",
+    "analyzing.item4": "Compra directa con el propietario",
+    "analyzing.item5": "Valor m² por debajo del mercado",
+    "analyzing.item6": "Cerca de Curimãs",
+    "analyzing.item7": "Alta valorización de la región",
+    "analyzing.item8": "Solo 8 lotes, proyecto exclusivo",
+    "analyzing.highlight": "La estimación conservadora es una valorización muy positiva de al menos 20% anual, siguiendo el desarrollo turístico local, impulsado por deportes como el Kitesurf.",
+
+    // Know Bitupitá
+    "know.title": "Conoce Bitupitá",
+    "know.location": "Ubicación",
+    "know.location.link": "Ver en Google Maps",
+    "know.location.desc": "Accede al mapa y descubre la ubicación privilegiada de este paraíso.",
+    "know.video": "Vídeo del Lugar",
+    "know.video.link": "Ver en Instagram",
+    "know.video.desc": "Ve imágenes reales y enamórate de Bitupitá.",
+
+    // Paradise Awaits
+    "paradise.title": "¡Tu paraíso te espera!",
+    "paradise.cta": "Asegura tu lugar al sol (y al viento): No esperes a que ocurra la valorización para decidir. ¡Anticípate!",
+    "paradise.contact": "Contáctanos por Tel/WhatsApp o Envía un correo",
+    "paradise.offering": "Ofrecido por: Terra Ventos",
+    "paradise.ceo": "CEO, Terra Ventos",
+
+    // Language Selector
+    "language.portuguese": "Português",
+    "language.english": "We speak English",
+    "language.spanish": "Hablamos Español",
 
     // Stats Section
     "stats.experience": "Años de Experiencia",

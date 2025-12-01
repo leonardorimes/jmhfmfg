@@ -3,17 +3,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 // import Navbar from "@/components/Navbar"; // Mantido comentado para uso futuro
-import Footer from "@/components/Footer";
 import SignupModal from "@/components/SignupModal";
 import DynamicMeta from "@/components/DynamicMeta";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import OpportunityHero from "@/components/opportunity/OpportunityHero";
-import BalanceSection from "@/components/opportunity/BalanceSection";
-import InvestmentOptionsSection from "@/components/opportunity/InvestmentOptionsSection";
-import ValuationSection from "@/components/opportunity/ValuationSection";
-import AnalysisSection from "@/components/opportunity/AnalysisSection";
-import AboutBitupitaSection from "@/components/opportunity/AboutBitupitaSection";
-import SignupSection from "@/components/SignupSection";
+import Hero from "@/components/Hero";
+import ProblemSection from "@/components/ProblemSection";
+import InvestmentOptionsSection from "@/components/InvestmentOptionsSection";
+import NextFrontierSection from "@/components/NextFrontierSection";
+import AnalyzingOpportunitySection from "@/components/AnalyzingOpportunitySection";
+import KnowBitupitaSection from "@/components/KnowBitupitaSection";
+import ParadiseAwaitsSection from "@/components/ParadiseAwaitsSection";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,14 +29,13 @@ export default function Home() {
     >
       <DynamicMeta />
       {/* <Navbar onContactClick={openModal} /> */}
-      <OpportunityHero onContactClick={openModal} />
-      <BalanceSection />
+      <Hero onContactClick={openModal} />
+      <ProblemSection />
       <InvestmentOptionsSection />
-      <ValuationSection />
-      <AnalysisSection />
-      <AboutBitupitaSection />
-      <SignupSection />
-      <Footer />
+      <NextFrontierSection />
+      <AnalyzingOpportunitySection />
+      <KnowBitupitaSection />
+      <ParadiseAwaitsSection />
 
       <SignupModal isOpen={isModalOpen} onClose={closeModal} />
       <WhatsAppButton />

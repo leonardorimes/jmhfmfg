@@ -24,7 +24,7 @@ export default function Hero({ onContactClick }: HeroProps) {
   const [previousVideo, setPreviousVideo] = useState<string>("");
 
   // ID do vídeo fixo do YouTube que será exibido como fundo
-  const videoId = "ssKZTE7YTWU"; // Vídeo fixo do YouTube
+  const videoId = "0oS_uOBhVYw"; // Vídeo fixo do YouTube
 
   // Estados para controlar diferentes fases de carregamento
   const [isLoading, setIsLoading] = useState(true); // Loading screen inicial
@@ -115,10 +115,49 @@ export default function Hero({ onContactClick }: HeroProps) {
       {/* Loading durante redimensionamento da janela */}
       <ResizeLoading isVisible={isResizeLoading} />
 
-      {/* Seção principal do Hero */}
-      <section className="relative min-h-screen flex items-center w-full max-w-full overflow-hidden">
-        {/* Container do vídeo de fundo */}
-        <div className="absolute inset-0 w-full h-full">
+      {/* Seção Hero com layout split-screen - vídeo à esquerda, texto à direita */}
+      <section className="relative w-full max-w-full overflow-x-hidden flex flex-col lg:flex-row">
+        {/* TÍTULO MOBILE - Acima do vídeo (apenas mobile) */}
+        <div className="lg:hidden relative w-full px-6 py-8 z-30" style={{ backgroundColor: '#F9F6F1' }}>
+          <motion.div
+            className="relative z-10 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.3,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+          >
+            <h1 className="text-2xl sm:text-3xl leading-relaxed font-breathing text-gray-900 flex items-center justify-center gap-4">
+              {/* Linha vertical à esquerda */}
+              <div className="h-16 sm:h-20 w-0.5 bg-accent-500 flex-shrink-0"></div>
+              
+              <div className="flex-1 text-center space-y-3 sm:space-y-4">
+                <span className="block text-primary-600 tracking-wide">{t("hero.bitupita")}</span>
+                <span className="block text-primary-700">
+                  <span className="lg:hidden whitespace-nowrap">{t("hero.refuge")}</span>
+                  <span className="hidden lg:block">
+                    {(() => {
+                      const refugeText = t("hero.refuge");
+                      const words = refugeText.split(" ");
+                      const firstTwo = words.slice(0, 2).join(" ");
+                      const rest = words.slice(2).join(" ");
+                      return (
+                        <>
+                          <span className="mr-12 xl:mr-16 whitespace-nowrap">{firstTwo}</span> <span className="xl:mt-16"></span>{rest}
+                        </>
+                      );
+                    })()}
+                  </span>
+                </span>
+              </div>
+            </h1>
+          </motion.div>
+        </div>
+
+        {/* LADO ESQUERDO - VÍDEO (55% em desktop, 50vh em mobile) */}
+        <div className="relative w-full lg:w-[55%] h-[50vh] lg:h-full bg-black overflow-hidden flex-shrink-0">
           {/* Fundo preto como fallback caso o vídeo não carregue */}
           <div className="absolute inset-0 bg-black"></div>
 
@@ -126,15 +165,15 @@ export default function Hero({ onContactClick }: HeroProps) {
           {currentVideo && (
             <div className="absolute inset-0 w-full h-full z-5 overflow-hidden">
               {/* Gradiente sutil para suavizar bordas cortadas */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/10 z-10 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20 z-10 pointer-events-none"></div>
               <iframe
                 key={videoKey} // Força reload quando a chave muda
                 className="absolute top-1/2 left-1/2 
                   w-[177.78vh] h-[56.25vw] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2
-                  md:w-[177.78vh] md:h-[56.25vw]
-                  sm:w-[200vh] sm:h-[112.5vw] sm:scale-110
+                  lg:w-[177.78vh] lg:h-[56.25vw]
+                  md:w-[200vh] md:h-[112.5vw] md:scale-110
                   w-[250vh] h-[140.625vw] scale-125"
-                src={`https://www.youtube.com/embed/${currentVideo}?autoplay=1&mute=1&loop=1&playlist=${currentVideo}&controls=0&showinfo=0&rel=0&modestbranding=1&fs=0&disablekb=1&enablejsapi=1&start=0`}
+                src={`https://www.youtube.com/embed/${currentVideo}?autoplay=1&mute=1&loop=1&playlist=${currentVideo}&controls=0&showinfo=0&rel=0&modestbranding=1&fs=0&disablekb=1&enablejsapi=1&start=0&vq=hd1080&quality=high&hd=1`}
                 title="Background Video"
                 frameBorder="0"
                 allow="autoplay; encrypted-media; fullscreen"
@@ -157,7 +196,7 @@ export default function Hero({ onContactClick }: HeroProps) {
 
           {/* Indicador de tela preta detectada */}
           {isBlackScreen && (
-            <div className="absolute top-4 right-4 z-20 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+            <div className="absolute top-4 right-4 z-20 bg-black/70 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
               ⚫ Recarregando vídeo...
             </div>
           )}
@@ -166,7 +205,7 @@ export default function Hero({ onContactClick }: HeroProps) {
           {isVideoPlaying && !isBlackScreen && (
             <button
               onClick={reloadVideo}
-              className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-200"
+              className="absolute top-4 right-4 z-20 bg-black/70 hover:bg-black/90 text-white p-2 rounded-full transition-colors duration-200 backdrop-blur-sm"
               title="Recarregar vídeo"
             >
               <svg
@@ -222,68 +261,144 @@ export default function Hero({ onContactClick }: HeroProps) {
               </div>
             </div>
           )}
+
         </div>
 
-        {/* Overlay claro para melhorar a visibilidade do texto */}
-        <div className="absolute inset-0 bg-black/5 z-10"></div>
+        {/* LADO DIREITO - CONTEÚDO DE TEXTO (45% em desktop, auto em mobile) */}
+        <div className="relative w-full lg:w-[45%] flex items-start justify-start overflow-x-hidden overflow-y-auto flex-shrink-0 pb-6 lg:pb-8" style={{ backgroundColor: '#F9F6F0' }}>
+          {/* Elementos decorativos de fundo */}
+          <div className="absolute inset-0 overflow-hidden z-0">
+            {/* Gradiente sutil */}
+            <div className="absolute inset-0 bg-gradient-to-br from-accent-50/30 via-transparent to-accent-100/20"></div>
+            {/* Círculos decorativos */}
+            <div className="absolute top-20 right-10 w-64 h-64 bg-accent-200/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent-300/10 rounded-full blur-3xl"></div>
+            {/* Linhas decorativas */}
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-200/30 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-200/30 to-transparent"></div>
+          </div>
 
-        {/* Gradiente sutil para melhorar a legibilidade do texto */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/2 via-transparent to-black/8 z-15"></div>
-
-        {/* Container principal do conteúdo */}
-        <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex items-center justify-center py-8 md:py-0">
-          <div className="text-center max-w-4xl mx-auto w-full">
+          {/* Container do conteúdo */}
+          <div className="relative z-10 w-full max-w-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-4 lg:py-6">
             <motion.div
-              className="text-white space-y-16"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              className="text-gray-900 overflow-x-hidden"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
-              <motion.h1
-                className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight font-breathing mb-1"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 1.2,
-                  delay: 0.3,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-              >
-                <div className="space-y-6 sm:space-y-8 md:space-y-12">
-                  <div className="text-white font-breathing w-full">
-                    {t("signup.title")}
+              {/* Layout: Tudo empilhado verticalmente */}
+              <div className="space-y-4 sm:space-y-3 md:space-y-4 lg:space-y-8">
+                {/* Título principal (oculto no mobile, visível no desktop) */}
+                <motion.h1
+                  className="hidden lg:flex items-start gap-6 text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl leading-relaxed lg:leading-loose font-breathing text-gray-900 text-left lg:tracking-[0.15em] xl:tracking-[0.2em]"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.3,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
+                >
+                  {/* Linha vertical à esquerda */}
+                  <div className="h-24 xl:h-28 w-0.5 bg-accent-500 flex-shrink-0 mt-2"></div>
+                  
+                  <div className="flex-1 space-y-10 sm:space-y-12 lg:space-y-8 xl:space-y-10">
+                    <span className="block text-gray-900">{t("hero.bitupita")}</span>
+                    <span className="block text-gray-900 overflow-x-hidden">
+                      {(() => {
+                        const refugeText = t("hero.refuge");
+                        const words = refugeText.split(" ");
+                        const firstTwo = words.slice(0, 2).join(" ");
+                        const rest = words.slice(2).join(" ");
+                        return (
+                          <>
+                            <span className="mr-40 xl:mr-48 whitespace-nowrap">{firstTwo}</span> <span className="text-4xl xl:text-5xl whitespace-nowrap">{rest}</span>
+                          </>
+                        );
+                      })()}
+                    </span>
                   </div>
-                  <div className="text-white font-breathing">
-                    {t("signup.title2")}
-                  </div>
-                </div>
-              </motion.h1>
+                </motion.h1>
 
-              <motion.h2
-                className="text-white font-bold leading-relaxed mb-12 mt-12 sm:mb-16 sm:mt-16 md:mb-16 md:mt-24 max-w-2xl mx-auto"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: 1,
-                  duration: 1,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-              >
-                <div className="space-y-1 text-center">
-                  <div className="text-lg sm:text-xl md:text-2xl font-semibold">
-                    {t("signup.subtitle.line1")}.
+                {/* Destaque - Área */}
+                <motion.div
+                  className="mt-4 sm:mt-2 md:mt-3 lg:mt-6 text-center lg:text-left relative"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    delay: 0.6,
+                    duration: 1,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
+                >
+                  <div className="inline-block relative">
+                    {/* Fundo decorativo */}
+                    <div className="absolute -inset-4 bg-gradient-to-br from-accent-100/40 to-accent-200/20 rounded-2xl blur-xl"></div>
+                    <div className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-accent-600 font-breathing drop-shadow-sm">
+                      <span className="relative z-10 bg-gradient-to-br from-accent-600 to-accent-500 bg-clip-text text-transparent">
+                        4,300m²
+                      </span>
+                    </div>
                   </div>
-                  <div className="text-base sm:text-lg md:text-lg font-medium">
-                    {t("signup.subtitle.line2")},
-                  </div>
-                  <div className="text-sm sm:text-base md:text-base">
-                    {t("signup.subtitle.line3")}.
-                  </div>
-                </div>
-              </motion.h2>
+                </motion.div>
 
+                {/* Subtítulo */}
+                <motion.h2
+                  className="text-gray-900 font-bold leading-tight sm:leading-relaxed mt-4 sm:mt-2 md:mt-3 lg:mt-6 text-center lg:text-left"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 1,
+                    duration: 1,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
+                >
+                  <div className="space-y-3 sm:space-y-1.5">
+                    {/* Textos empilhados verticalmente */}
+                    <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-primary-600 relative inline-block">
+                      <span className="relative z-10">{t("hero.best-investment")}</span>
+                      <div className="absolute -bottom-1 left-0 right-0 h-1 bg-accent-300/40 rounded-full"></div>
+                    </div>
+                    <div className="text-sm sm:text-base md:text-lg lg:text-xl mt-3 sm:mt-1 md:mt-2 lg:mt-3 text-secondary-600 leading-relaxed">
+                      {t("hero.discover-paradise")}
+                    </div>
+                  </div>
+                </motion.h2>
+
+                {/* Botão Mobile - Abaixo de tudo */}
+                <motion.div
+                  className="sm:hidden flex justify-center mt-5 mb-3 w-full"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 1.6,
+                    duration: 1.2,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
+                >
+                <motion.a
+                  href="https://chat.whatsapp.com/IRDTyn0rKIXLVGQNqPkzQ8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative bg-gradient-to-r from-accent-500 to-accent-600 text-white px-10 py-4 rounded-xl text-base font-semibold hover:from-accent-600 hover:to-accent-700 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 font-avenir whitespace-nowrap overflow-hidden group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {/* Efeito de brilho no hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                  <span className="relative z-10 flex items-center gap-2">
+                    Saiba Mais
+                    <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+                </motion.a>
+                </motion.div>
+              </div>
+
+              {/* Botão Desktop */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center mt-16 sm:mt-20 md:mt-32 w-full"
+                className="hidden sm:flex justify-start mt-4 sm:mt-6 md:mt-8 lg:mt-12 mb-3 lg:mb-4 w-full"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -296,88 +411,23 @@ export default function Hero({ onContactClick }: HeroProps) {
                   href="https://chat.whatsapp.com/IRDTyn0rKIXLVGQNqPkzQ8"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-accent-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-accent-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 font-avenir w-full sm:w-auto"
+                  className="relative bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-accent-600 hover:to-accent-700 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 font-avenir w-full sm:w-auto overflow-hidden group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {t("hero.cta")}
-                </motion.a>
-                <motion.a
-                  href="#por-que-fazer-parte"
-                  className="border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm font-avenir w-full sm:w-auto"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {t("hero.discover")}
+                  {/* Efeito de brilho no hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                  <span className="relative z-10 flex items-center gap-2">
+                    Saiba Mais
+                    <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
                 </motion.a>
               </motion.div>
             </motion.div>
           </div>
         </div>
-
-        {/* Estatísticas flutuantes - Ocultas no mobile para evitar sobreposição */}
-        <motion.div
-          className="hidden lg:block absolute top-8 right-8 bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/20"
-          initial={{ opacity: 0, scale: 0.8, y: -20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          whileHover={{ scale: 1.05 }}
-        >
-          <div className="text-center text-white">
-            <div className="text-3xl font-bold text-accent-500">500+</div>
-            <div className="text-sm text-white/80">Investidores Ativos</div>
-          </div>
-        </motion.div>
-
-        {/* Segunda estatística flutuante */}
-        <motion.div
-          className="hidden lg:block absolute bottom-8 left-8 bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/20"
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          whileHover={{ scale: 1.05 }}
-        >
-          <div className="text-center text-white">
-            <div className="text-3xl font-bold text-accent-500">
-              {t("stats.value")}
-            </div>
-            <div className="text-sm text-white/80">{t("stats.volume")}</div>
-          </div>
-        </motion.div>
-
-        {/* Elementos decorativos flutuantes - Ocultos no mobile */}
-        <motion.div
-          className="hidden lg:block absolute top-1/4 left-8 w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center shadow-lg"
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          whileHover={{ scale: 1.1, rotate: 10 }}
-        >
-          <svg
-            className="w-6 h-6 text-white"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-          </svg>
-        </motion.div>
-
-        {/* Segundo elemento decorativo flutuante */}
-        <motion.div
-          className="hidden lg:block absolute bottom-1/4 right-8 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm"
-          initial={{ scale: 0, rotate: 180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          whileHover={{ scale: 1.1, rotate: -10 }}
-        >
-          <svg
-            className="w-5 h-5 text-white"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-          </svg>
-        </motion.div>
       </section>
     </>
   );
