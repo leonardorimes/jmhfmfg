@@ -85,6 +85,7 @@ html {
    CONTROLE DE SCROLL - APENAS UMA BARRA
    ============================================ */
 
+/* Forçar apenas uma barra de rolagem - apenas no html */
 html {
   overflow-x: hidden;
   overflow-y: auto;
@@ -93,17 +94,19 @@ html {
   height: 100%;
 }
 
+/* Body não deve ter scroll próprio - apenas o html tem */
 body {
   color: rgb(var(--foreground-rgb));
   background: white;
   font-family: "Average Sans", "Inter", system-ui, sans-serif;
   font-weight: 100;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: visible !important; /* Forçar sem scroll próprio */
   margin: 0;
   padding: 0;
-  height: 100%;
   position: relative;
+  height: auto !important; /* Não fixar altura */
+  min-height: 100%;
 }
 
 /* Garantir que elementos principais não bloqueiem scroll */
@@ -150,10 +153,11 @@ nav {
 /* Garantir que containers do Next.js não bloqueiem scroll */
 #__next,
 [data-nextjs-scroll-focus-boundary] {
-  overflow-x: hidden;
-  overflow-y: visible;
-  height: 100%;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
   position: relative;
+  height: auto !important;
+  min-height: 100%;
 }
 
 @layer utilities {
@@ -311,7 +315,7 @@ nav {
   overflow: hidden !important;
   width: 100% !important;
   height: 100% !important;
-  z-index: 0 !important;
+  z-index: -1 !important;
 }
 
 /* Iframe do Vimeo - técnica object-fit: cover para eliminar tarjas pretas */
@@ -321,7 +325,8 @@ nav {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   border: none !important;
-  z-index: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
   /* Usar max() para escolher a maior dimensão necessária (equivalente a object-fit: cover) */
   width: max(100vw, 177.78vh) !important;
   height: max(100vh, 56.25vw) !important;
@@ -362,4 +367,30 @@ nav {
     overflow: hidden !important;
     height: 100% !important;
   }
+}
+
+/* CSS para VimeoVideoSection - garantir largura total sem bordas cinzas */
+iframe[src*="vimeo.com"] {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  display: block !important;
+}
+
+/* Garantir que o container do vídeo Vimeo ocupe 100% da largura */
+.vimeo-video-section-container {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.vimeo-video-section-container > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }

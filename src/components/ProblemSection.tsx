@@ -140,7 +140,7 @@ export default function ProblemSection() {
       color="gray"
       direction="up"
       delay={0.1}
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-white relative overflow-hidden"
     >
       {/* Logo como sombra de fundo */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -152,7 +152,7 @@ export default function ProblemSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <motion.h2
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-6 font-breathing"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-6 font-breathing px-2 break-words"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

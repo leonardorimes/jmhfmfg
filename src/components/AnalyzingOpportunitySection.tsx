@@ -24,7 +24,7 @@ export default function AnalyzingOpportunitySection() {
       color="gray"
       direction="up"
       delay={0.1}
-      className="py-20 bg-[#F9F6F0] relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-[#F9F6F0] relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -67,7 +67,7 @@ export default function AnalyzingOpportunitySection() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-8 lg:mb-12 font-breathing text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-8 lg:mb-12 font-breathing text-center lg:text-left px-2 break-words">
               {t("analyzing.title")}
             </h2>
 

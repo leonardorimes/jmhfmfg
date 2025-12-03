@@ -30,7 +30,7 @@ export default function InvestmentOptionsSection() {
       color="gray"
       direction="up"
       delay={0.1}
-      className="py-20 bg-[#F9F6F0] relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-[#F9F6F0] relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -45,7 +45,7 @@ export default function InvestmentOptionsSection() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-12 font-breathing text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-8 md:mb-12 font-breathing text-center lg:text-left px-2 break-words">
               {t("investment.title")}
             </h2>
 

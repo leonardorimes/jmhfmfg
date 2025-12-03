@@ -226,6 +226,13 @@ const translations = {
     "paradise.offering": "Oferecimento: Terra Ventos",
     "paradise.ceo": "CEO, Terra Ventos",
 
+    // Promo Banner
+    "promo.title": "Invista com o vento a favor.",
+    "promo.sponsor": "Oferecimento:",
+    "promo.description": "As melhores oportunidades de investimento em imóveis no litoral do Ceará. Assessoria especializada.",
+    "promo.language.english": "We speak English",
+    "promo.language.spanish": "Hablamos Español",
+
     // Language Selector
     "language.portuguese": "Português",
     "language.english": "We speak English",
@@ -459,6 +466,13 @@ const translations = {
     "paradise.contact": "Contact us by Tel/WhatsApp or Send an email",
     "paradise.offering": "Offered by: Terra Ventos",
     "paradise.ceo": "CEO, Terra Ventos",
+
+    // Promo Banner
+    "promo.title": "Invest with the wind in your favor.",
+    "promo.sponsor": "Offered by:",
+    "promo.description": "The best real estate investment opportunities on the coast of Ceará. Specialized advice.",
+    "promo.language.english": "We speak English",
+    "promo.language.spanish": "Hablamos Español",
 
     // Language Selector
     "language.portuguese": "Português",
@@ -694,6 +708,13 @@ const translations = {
     "paradise.contact": "Contáctanos por Tel/WhatsApp o Envía un correo",
     "paradise.offering": "Ofrecido por: Terra Ventos",
     "paradise.ceo": "CEO, Terra Ventos",
+
+    // Promo Banner
+    "promo.title": "Invierte con el viento a favor.",
+    "promo.sponsor": "Ofrecido por:",
+    "promo.description": "Las mejores oportunidades de inversión inmobiliaria en la costa de Ceará. Asesoría especializada.",
+    "promo.language.english": "We speak English",
+    "promo.language.spanish": "Hablamos Español",
 
     // Language Selector
     "language.portuguese": "Português",

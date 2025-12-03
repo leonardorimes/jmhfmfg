@@ -13,13 +13,13 @@ export default function KnowBitupitaSection() {
       color="gray"
       direction="up"
       delay={0.1}
-      className="py-20 bg-[#F9F6F0] relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-[#F9F6F0] relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Lado Esquerdo - Conteúdo */}
           <motion.div
-            className="order-2 lg:order-1"
+            className="order-1 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -29,7 +29,7 @@ export default function KnowBitupitaSection() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mt-8 md:mt-12 lg:mt-16 mb-12 font-breathing text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mt-4 md:mt-8 lg:mt-12 mb-8 md:mb-12 font-breathing text-center lg:text-left px-2 break-words">
               {t("know.title")}
             </h2>
 
@@ -140,7 +140,7 @@ export default function KnowBitupitaSection() {
 
           {/* Lado Direito - Slider de Fotos */}
           <motion.div
-            className="relative order-1 lg:order-2"
+            className="relative order-2 lg:order-2"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

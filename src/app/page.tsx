@@ -6,7 +6,9 @@ import { motion } from "framer-motion";
 import SignupModal from "@/components/SignupModal";
 import DynamicMeta from "@/components/DynamicMeta";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import FixedLanguageSelector from "@/components/FixedLanguageSelector";
 import Hero from "@/components/Hero";
+import PromoBanner from "@/components/PromoBanner";
 import ProblemSection from "@/components/ProblemSection";
 import InvestmentOptionsSection from "@/components/InvestmentOptionsSection";
 import NextFrontierSection from "@/components/NextFrontierSection";
@@ -28,8 +30,10 @@ export default function Home() {
       transition={{ duration: 0.5 }}
     >
       <DynamicMeta />
+      <FixedLanguageSelector />
       {/* <Navbar onContactClick={openModal} /> */}
       <Hero onContactClick={openModal} />
+      <PromoBanner />
       <ProblemSection />
       <InvestmentOptionsSection />
       <NextFrontierSection />
