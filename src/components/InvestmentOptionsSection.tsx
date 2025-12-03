@@ -90,13 +90,13 @@ export default function InvestmentOptionsSection() {
                           <span className="text-sm md:text-base font-medium text-secondary-600 mb-3 font-avenir uppercase tracking-wide">
                             {t("investment.label")}
                           </span>
-                          <div className="flex items-baseline gap-2 flex-wrap">
-                            <span className="text-xl md:text-2xl text-secondary-500 font-avenir font-semibold">R$</span>
-                            <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent-600 font-avenir tracking-tight leading-none">
+                          <div className="flex items-baseline gap-2 flex-nowrap">
+                            <span className="text-xl md:text-2xl text-secondary-500 font-avenir font-semibold flex-shrink-0">R$</span>
+                            <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent-600 font-avenir tracking-tight leading-none whitespace-nowrap">
                               {option.investment.replace("R$ ", "").split(",")[0]}
-                            </span>
-                            <span className="text-2xl md:text-3xl text-accent-500 font-avenir font-semibold">
-                              ,{option.investment.split(",")[1] || "00"}
+                              <span className="text-2xl md:text-3xl text-accent-500 font-avenir font-semibold">
+                                ,{option.investment.split(",")[1] || "00"}
+                              </span>
                             </span>
                           </div>
                         </div>
