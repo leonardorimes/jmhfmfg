@@ -13,7 +13,7 @@ export default function KnowBitupitaSection() {
       color="gray"
       direction="up"
       delay={0.1}
-      className="py-12 sm:py-16 md:py-20 bg-[#F9F6F0] relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-[#1A202C] relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -29,14 +29,14 @@ export default function KnowBitupitaSection() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mt-4 md:mt-8 lg:mt-12 mb-8 md:mb-12 font-breathing text-center lg:text-left px-2 break-words">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 md:mt-8 lg:mt-12 mb-8 md:mb-12 font-breathing text-center lg:text-left px-2 break-words">
               {t("know.title")}
             </h2>
 
             <div className="space-y-8">
-              {/* Localização */}
+              {/* Localização - Estilo Card do Design Canva */}
               <motion.div
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg border border-accent-200/50 hover:shadow-xl transition-all duration-300"
+                className="bg-[#1A202C] rounded-xl p-6 md:p-8 shadow-lg border border-gray-400/30 hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -46,9 +46,9 @@ export default function KnowBitupitaSection() {
                 <div className="flex items-start gap-4">
                   {/* Ícone de Pin */}
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-accent-500/10 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-accent-500/20 rounded-xl flex items-center justify-center border border-accent-400/30">
                       <svg
-                        className="w-6 h-6 text-accent-500"
+                        className="w-6 h-6 text-accent-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -70,27 +70,27 @@ export default function KnowBitupitaSection() {
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-primary-500 mb-3 font-diodrum">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-3 font-diodrum">
                       {t("know.location")}
                     </h3>
                     <a
                       href="https://www.google.cl/maps/place/2%C2%B053'17.7%22S+41%C2%B016'05.0%22W/@-2.8882406,-41.2706379,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-2.888246!4d-41.268063?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-accent-600 hover:text-accent-700 font-semibold underline mb-3 inline-block transition-colors duration-200"
+                      className="text-accent-400 hover:text-accent-300 font-semibold underline mb-3 inline-block transition-colors duration-200"
                     >
                       {t("know.location.link")}
                     </a>
-                    <p className="text-base md:text-lg text-secondary-500 leading-relaxed font-body">
+                    <p className="text-base md:text-lg text-gray-300 leading-relaxed font-body">
                       {t("know.location.desc")}
                     </p>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Vídeo do Local */}
+              {/* Vídeo do Local - Estilo Card do Design Canva */}
               <motion.div
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg border border-accent-200/50 hover:shadow-xl transition-all duration-300"
+                className="bg-[#1A202C] rounded-xl p-6 md:p-8 shadow-lg border border-gray-400/30 hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -100,9 +100,9 @@ export default function KnowBitupitaSection() {
                 <div className="flex items-start gap-4">
                   {/* Ícone de Câmera */}
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-accent-500/10 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-accent-500/20 rounded-xl flex items-center justify-center border border-accent-400/30">
                       <svg
-                        className="w-6 h-6 text-accent-500"
+                        className="w-6 h-6 text-accent-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -118,18 +118,18 @@ export default function KnowBitupitaSection() {
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-primary-500 mb-3 font-diodrum">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-3 font-diodrum">
                       {t("know.video")}
                     </h3>
                     <a
                       href="https://www.instagram.com/p/DRiZwaWCRz2/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-accent-600 hover:text-accent-700 font-semibold underline mb-3 inline-block transition-colors duration-200"
+                      className="text-accent-400 hover:text-accent-300 font-semibold underline mb-3 inline-block transition-colors duration-200"
                     >
                       {t("know.video.link")}
                     </a>
-                    <p className="text-base md:text-lg text-secondary-500 leading-relaxed font-body">
+                    <p className="text-base md:text-lg text-gray-300 leading-relaxed font-body">
                       {t("know.video.desc")}
                     </p>
                   </div>

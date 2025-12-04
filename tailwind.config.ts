@@ -9,56 +9,55 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Paleta baseada na imagem fornecida
+        // Paleta baseada no design do Canva - tema escuro moderno
         primary: {
-          50: "#E9DFD6", // Cinza claro
-          100: "#F8F0E5", // Creme claro
-          200: "#CCBDAA", // Bege
-          300: "#5D768C", // Azul acinzentado
-          400: "#142431", // Azul escuro
-          500: "#142431", // Azul escuro principal
-          600: "#0F1A25", // Azul mais escuro
-          700: "#0A1219", // Azul muito escuro
-          800: "#060B0F", // Quase preto
+          50: "#E5E7EB", // Cinza muito claro
+          100: "#D1D5DB", // Cinza claro
+          200: "#9CA3AF", // Cinza médio
+          300: "#6B7280", // Cinza
+          400: "#4B5563", // Cinza escuro
+          500: "#1A202C", // Azul-cinza escuro principal (background)
+          600: "#2A365C", // Azul escuro (banner)
+          700: "#0F172A", // Azul muito escuro
+          800: "#0A0E1A", // Quase preto azulado
           900: "#030508", // Preto
         },
         secondary: {
-          50: "#F8F0E5", // Creme claro
-          100: "#E9DFD6", // Cinza claro
-          200: "#CCBDAA", // Bege
-          300: "#5D768C", // Azul acinzentado
-          400: "#142431", // Azul escuro
-          500: "#5D768C", // Azul acinzentado principal
-          600: "#4A5F73", // Azul acinzentado mais escuro
-          700: "#3A4A5A", // Azul acinzentado escuro
-          800: "#2A3642", // Azul acinzentado muito escuro
-          900: "#1A2229", // Azul acinzentado quase preto
+          50: "#F9FAFB", // Branco suave
+          100: "#F3F4F6", // Cinza muito claro
+          200: "#E5E7EB", // Cinza claro
+          300: "#D1D5DB", // Cinza médio claro
+          400: "#9CA3AF", // Cinza médio
+          500: "#6B7280", // Cinza (texto secundário)
+          600: "#4B5563", // Cinza escuro
+          700: "#374151", // Cinza mais escuro
+          800: "#1F2937", // Cinza muito escuro
+          900: "#111827", // Cinza quase preto
         },
         accent: {
-          50: "#CCBDAA", // Bege
-          100: "#D4C4A8", // Bege claro
-          200: "#B8A085", // Bege médio
-          300: "#A68B6F", // Bege escuro
-          400: "#947659", // Bege mais escuro
-          500: "#CCBDAA", // Bege principal
-          600: "#B8A085", // Bege escuro
-          700: "#A68B6F", // Bege mais escuro
-          800: "#947659", // Bege muito escuro
-          900: "#826543", // Bege quase marrom
-          950: "#87908E", // Cinza esverdeado
+          50: "#E8EBED", // Azul muito claro
+          100: "#D1D7DB", // Azul claro
+          200: "#A3AFB7", // Azul médio claro
+          300: "#758793", // Azul médio
+          400: "#475F6F", // Azul médio escuro
+          500: "#142431", // Azul principal (#142431)
+          600: "#0F1A25", // Azul escuro
+          700: "#0A1219", // Azul mais escuro
+          800: "#050A0D", // Azul muito escuro
+          900: "#020508", // Azul quase preto
         },
         neutral: {
-          50: "#F8F0E5", // Creme claro
-          100: "#E9DFD6", // Cinza claro
-          200: "#D4C4A8", // Bege claro
-          300: "#CCBDAA", // Bege
-          400: "#5D768C", // Azul acinzentado
-          500: "#142431", // Azul escuro
-          600: "#0F1A25", // Azul mais escuro
-          700: "#0A1219", // Azul muito escuro
-          800: "#060B0F", // Quase preto
-          900: "#030508", // Preto
-          950: "#132331", // Azul escuro custom
+          50: "#F9FAFB", // Branco suave
+          100: "#F3F4F6", // Cinza muito claro
+          200: "#E5E7EB", // Cinza claro
+          300: "#D1D5DB", // Cinza médio claro
+          400: "#9CA3AF", // Cinza médio
+          500: "#6B7280", // Cinza
+          600: "#4B5563", // Cinza escuro
+          700: "#374151", // Cinza mais escuro
+          800: "#1F2937", // Cinza muito escuro
+          900: "#111827", // Cinza quase preto
+          950: "#1A202C", // Azul-cinza escuro (background principal)
         },
       },
       fontFamily: {

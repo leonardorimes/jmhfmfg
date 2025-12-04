@@ -24,7 +24,7 @@ export default function AnalyzingOpportunitySection() {
       color="gray"
       direction="up"
       delay={0.1}
-      className="py-12 sm:py-16 md:py-20 bg-[#F9F6F0] relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-[#1A202C] relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -67,7 +67,7 @@ export default function AnalyzingOpportunitySection() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-8 lg:mb-12 font-breathing text-center lg:text-left px-2 break-words">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 lg:mb-12 font-breathing text-center lg:text-left px-2 break-words">
               {t("analyzing.title")}
             </h2>
 
@@ -98,16 +98,16 @@ export default function AnalyzingOpportunitySection() {
                       />
                     </svg>
                   </div>
-                  <p className="text-base md:text-lg text-secondary-600 leading-relaxed font-body flex-1">
+                  <p className="text-base md:text-lg text-gray-300 leading-relaxed font-body flex-1">
                     {opportunity}
                   </p>
                 </motion.div>
               ))}
             </div>
 
-            {/* Box de Valorização */}
+            {/* Box de Valorização - Estilo Card do Design Canva */}
             <motion.div
-              className="bg-amber-50/80 border-2 border-amber-200/50 rounded-2xl p-6 md:p-8 shadow-lg"
+              className="bg-[#1A202C] border border-gray-400/30 rounded-xl p-6 md:p-8 shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -116,9 +116,9 @@ export default function AnalyzingOpportunitySection() {
               <div className="flex items-start gap-4">
                 {/* Ícone de gráfico */}
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-accent-500/20 rounded-xl flex items-center justify-center border border-accent-400/30">
                     <svg
-                      className="w-6 h-6 text-amber-700"
+                      className="w-6 h-6 text-accent-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -132,7 +132,7 @@ export default function AnalyzingOpportunitySection() {
                     </svg>
                   </div>
                 </div>
-                <p className="text-base md:text-lg text-secondary-700 leading-relaxed font-body">
+                <p className="text-base md:text-lg text-gray-300 leading-relaxed font-body">
                   {t("analyzing.highlight")}
                 </p>
               </div>

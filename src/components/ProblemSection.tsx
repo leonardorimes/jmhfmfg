@@ -152,7 +152,11 @@ export default function ProblemSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-6 font-breathing px-2 break-words"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-6 px-2 break-words"
+            style={{
+              fontFamily: '"Avenir", "Avenir Black", "Avenir Light", sans-serif',
+              fontWeight: 700,
+            }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -170,7 +174,11 @@ export default function ProblemSection() {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="bg-neutral-50 border border-neutral-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="rounded-xl p-8 md:p-10 shadow-lg transition-all duration-300"
+              style={{
+                backgroundColor: benefit.area ? "#111D29" : "#F9FAFB",
+                border: benefit.area ? "1px solid #C8B49B" : "1px solid #E5E7EB",
+              }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -187,16 +195,26 @@ export default function ProblemSection() {
             >
               {benefit.area ? (
                 <>
-                  <div className="flex items-start mb-4">
-                    <div className="text-accent-500 mr-3 mt-1">{benefit.icon}</div>
-                    <div>
-                      <div className="text-3xl font-bold text-accent-500 font-breathing mb-2">
-                        {benefit.area}
+                  <div className="flex flex-col items-center text-center">
+                    {/* Ícone circular no topo */}
+                    <div className="mb-6">
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 flex items-center justify-center mx-auto" style={{ borderColor: "#C8B49B" }}>
+                        <div style={{ color: "#C8B49B" }} className="w-8 h-8 md:w-10 md:h-10">
+                          {benefit.icon}
+                        </div>
                       </div>
-                      <p className="text-sm text-secondary-500 font-body">
-                        {benefit.areaDescription}
-                      </p>
                     </div>
+                    {/* Título grande */}
+                    <h3 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{
+                      fontFamily: '"Avenir", "Avenir Black", "Avenir Light", sans-serif',
+                      fontWeight: 700,
+                    }}>
+                      {benefit.area}
+                    </h3>
+                    {/* Texto descritivo */}
+                    <p className="text-base md:text-lg text-white/90 font-body leading-relaxed">
+                      {benefit.areaDescription}
+                    </p>
                   </div>
                 </>
               ) : (
@@ -245,170 +263,6 @@ export default function ProblemSection() {
             </p>
           </motion.div>
 
-          {/* Ficha Técnica */}
-          <motion.div
-            className="bg-gradient-to-br from-neutral-50 to-accent-50/30 border-2 border-accent-200/50 rounded-3xl p-8 md:p-12 shadow-2xl backdrop-blur-sm"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 1,
-              delay: 0.9,
-              ease: [0.25, 0.46, 0.45, 0.94],
-            }}
-            whileHover={{
-              boxShadow: "0 25px 50px rgba(14, 165, 233, 0.15)",
-              transition: { duration: 0.3 },
-            }}
-          >
-            <h3 className="text-3xl md:text-4xl font-bold text-primary-500 mb-8 text-center font-breathing">
-              {t("technical.specs")}
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {/* Área Total */}
-              <motion.div
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-accent-100 shadow-md hover:shadow-lg transition-all duration-300"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.1, duration: 0.8 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-12 h-12 bg-accent-500/10 rounded-xl flex items-center justify-center mr-4">
-                    <svg
-                      className="w-6 h-6 text-accent-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
-                      />
-                    </svg>
-                  </div>
-                  <h4 className="text-lg font-semibold text-primary-500 font-diodrum">
-                    {t("technical.total-area")}
-                  </h4>
-                </div>
-                <p className="text-sm text-secondary-500 mb-2 font-body">
-                  {t("technical.total-area.note")}
-                </p>
-                <p className="text-2xl font-bold text-accent-500 font-breathing">
-                  {t("technical.total-area.value")}
-                </p>
-              </motion.div>
-
-              {/* Frente Mar */}
-              <motion.div
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-accent-100 shadow-md hover:shadow-lg transition-all duration-300"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.2, duration: 0.8 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-12 h-12 bg-accent-500/10 rounded-xl flex items-center justify-center mr-4">
-                    <svg
-                      className="w-6 h-6 text-accent-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                      />
-                    </svg>
-                  </div>
-                  <h4 className="text-lg font-semibold text-primary-500 font-diodrum">
-                    {t("technical.beach-front")}
-                  </h4>
-                </div>
-                <p className="text-sm text-secondary-500 mb-2 font-body">
-                  {t("technical.beach-front.note")}
-                </p>
-                <p className="text-2xl font-bold text-accent-500 font-breathing">
-                  {t("technical.beach-front.value")}
-                </p>
-              </motion.div>
-
-              {/* Frente Rua */}
-              <motion.div
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-accent-100 shadow-md hover:shadow-lg transition-all duration-300"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.3, duration: 0.8 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-12 h-12 bg-accent-500/10 rounded-xl flex items-center justify-center mr-4">
-                    <svg
-                      className="w-6 h-6 text-accent-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                      />
-                    </svg>
-                  </div>
-                  <h4 className="text-lg font-semibold text-primary-500 font-diodrum">
-                    {t("technical.street-front")}
-                  </h4>
-                </div>
-                <p className="text-2xl font-bold text-accent-500 font-breathing mt-5">
-                  {t("technical.street-front.value")}
-                </p>
-              </motion.div>
-
-              {/* Profundidade */}
-              <motion.div
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-accent-100 shadow-md hover:shadow-lg transition-all duration-300"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.4, duration: 0.8 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-12 h-12 bg-accent-500/10 rounded-xl flex items-center justify-center mr-4">
-                    <svg
-                      className="w-6 h-6 text-accent-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 6h16M4 12h16M4 18h16"
-                      />
-                    </svg>
-                  </div>
-                  <h4 className="text-lg font-semibold text-primary-500 font-diodrum">
-                    {t("technical.depth")}
-                  </h4>
-                </div>
-                <p className="text-sm text-secondary-500 leading-relaxed font-body">
-                  {t("technical.depth.value")}
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
 
           {/* Vídeo Instagram */}
           <motion.div

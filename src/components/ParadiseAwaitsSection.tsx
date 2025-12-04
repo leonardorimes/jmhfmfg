@@ -19,7 +19,7 @@ export default function ParadiseAwaitsSection() {
       color="gray"
       direction="up"
       delay={0.1}
-      className="pt-8 pb-12 sm:pt-10 sm:pb-16 md:pt-12 md:pb-20 lg:pt-16 bg-[#F9F6F0] relative overflow-hidden"
+      className="pt-8 pb-12 sm:pt-10 sm:pb-16 md:pt-12 md:pb-20 lg:pt-16 bg-[#1A202C] relative overflow-hidden"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Conteúdo Centralizado */}
@@ -34,16 +34,16 @@ export default function ParadiseAwaitsSection() {
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-8 lg:mb-12 font-breathing px-2 break-words">
-            {t("paradise.title")}
-          </h2>
+           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 lg:mb-12 font-breathing px-2 break-words">
+             {t("paradise.title")}
+           </h2>
 
           {/* Seção WhatsApp */}
           <motion.a
             href="https://chat.whatsapp.com/IRDTyn0rKIXLVGQNqPkzQ8"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg border border-accent-200/50 mb-8 block cursor-pointer hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group max-w-2xl mx-auto"
+            className="bg-[#1A202C] rounded-xl p-6 md:p-8 shadow-lg border border-gray-400/30 mb-8 block cursor-pointer hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -63,8 +63,8 @@ export default function ParadiseAwaitsSection() {
                   </svg>
                 </div>
               </div>
-              <div className="flex-1 border-l-2 border-accent-200 pl-4 text-left">
-                <p className="text-base md:text-lg lg:text-xl text-secondary-700 leading-relaxed font-body font-semibold group-hover:text-accent-600 transition-colors duration-300">
+              <div className="flex-1 border-l-2 border-gray-400/30 pl-4 text-left">
+                <p className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed font-body font-semibold group-hover:text-accent-400 transition-colors duration-300">
                   {t("paradise.cta")}
                 </p>
               </div>
@@ -79,24 +79,24 @@ export default function ParadiseAwaitsSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.9, duration: 0.8 }}
           >
-            <p className="text-base md:text-lg text-secondary-600 leading-relaxed font-body mb-2">
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed font-body mb-2">
               {t("paradise.contact")}
               <a
                 href="mailto:contato@terraventos.com"
-                className="underline text-accent-600 hover:text-accent-700 font-semibold"
+                className="underline text-accent-400 hover:text-accent-300 font-semibold"
               >
                 Envie um email
               </a>
             </p>
-            <p className="text-base md:text-lg text-secondary-600 leading-relaxed font-body">
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed font-body">
               Oferecimento:{" "}
-              <span className="underline font-semibold text-primary-600">Terra Ventos</span>
+              <span className="underline font-semibold text-accent-400">Terra Ventos</span>
             </p>
           </motion.div>
 
           {/* Foto do CEO */}
           <motion.div
-            className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg border border-accent-200/50 mb-6 max-w-2xl mx-auto"
+            className="bg-[#1A202C] rounded-xl p-6 md:p-8 shadow-lg border border-gray-400/30 mb-6 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -113,10 +113,10 @@ export default function ParadiseAwaitsSection() {
                 />
               </div>
               <div className="flex-1 text-center md:text-left">
-                <p className="text-lg md:text-xl font-bold text-primary-500 font-diodrum">
+                <p className="text-lg md:text-xl font-bold text-white font-diodrum">
                   Bernardo Carvalho Wertheim
                 </p>
-                <p className="text-base md:text-lg text-secondary-600 font-body">
+                <p className="text-base md:text-lg text-gray-300 font-body">
                   {t("paradise.ceo")}
                 </p>
               </div>
@@ -135,8 +135,8 @@ export default function ParadiseAwaitsSection() {
               onClick={() => handleLanguageChange("pt")}
               className={`flex items-center gap-2 font-body transition-all duration-200 cursor-pointer group px-3 py-2 rounded-lg ${
                 language === "pt"
-                  ? "text-accent-600 bg-accent-50"
-                  : "text-secondary-600 hover:text-accent-600"
+                  ? "text-accent-400 bg-accent-500/20 border border-accent-400/30"
+                  : "text-gray-300 hover:text-accent-400 border border-gray-400/30"
               }`}
             >
               <span className="text-xl group-hover:scale-110 transition-transform duration-200">🇧🇷</span>
@@ -148,8 +148,8 @@ export default function ParadiseAwaitsSection() {
               onClick={() => handleLanguageChange("en")}
               className={`flex items-center gap-2 font-body transition-all duration-200 cursor-pointer group px-3 py-2 rounded-lg ${
                 language === "en"
-                  ? "text-accent-600 bg-accent-50"
-                  : "text-secondary-600 hover:text-accent-600"
+                  ? "text-accent-400 bg-accent-500/20 border border-accent-400/30"
+                  : "text-gray-300 hover:text-accent-400 border border-gray-400/30"
               }`}
             >
               <span className="text-xl group-hover:scale-110 transition-transform duration-200">🇬🇧</span>
@@ -161,8 +161,8 @@ export default function ParadiseAwaitsSection() {
               onClick={() => handleLanguageChange("es")}
               className={`flex items-center gap-2 font-body transition-all duration-200 cursor-pointer group px-3 py-2 rounded-lg ${
                 language === "es"
-                  ? "text-accent-600 bg-accent-50"
-                  : "text-secondary-600 hover:text-accent-600"
+                  ? "text-accent-400 bg-accent-500/20 border border-accent-400/30"
+                  : "text-gray-300 hover:text-accent-400 border border-gray-400/30"
               }`}
             >
               <span className="text-xl group-hover:scale-110 transition-transform duration-200">🇪🇸</span>

@@ -22,7 +22,31 @@ html {
 @font-face {
   font-family: "Avenir Light";
   src: url("/fonts/Avenir Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir Light";
+  src: url("/fonts/Avenir Light.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Avenir Black.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Avenir Heavy.ttf") format("truetype");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -30,6 +54,16 @@ html {
 @font-face {
   font-family: "DiodrumRounded";
   src: url("/fonts/DiodrumRounded-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DiodrumCyrillic";
+  src: url("/fonts/DiodrumCyrillic-Regular.woff2") format("woff2"),
+       url("/fonts/DiodrumCyrillic-Regular.woff") format("woff"),
+       url("/fonts/DiodrumCyrillic-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -98,8 +132,8 @@ html {
 
 /* Body não deve ter scroll próprio - apenas o html tem */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: white;
+  color: #E5E7EB; /* Texto claro para tema escuro */
+  background: #1A202C; /* Background escuro azul-cinza do design Canva */
   font-family: "Average Sans", "Inter", system-ui, sans-serif;
   font-weight: 100;
   overflow-x: hidden;
@@ -209,6 +243,15 @@ nav {
     font-family: "Average Sans", "Inter", "system-ui", sans-serif;
     font-weight: 100;
   }
+}
+
+/* Forçar cor de fundo da seção de opções de investimento */
+#investment-options-wrapper,
+.investment-options-wrapper,
+#investment-options-section,
+.investment-options-section {
+  background-color: #111D29 !important;
+  background: #111D29 !important;
 }
 
 /* Custom scrollbar */

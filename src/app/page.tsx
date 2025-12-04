@@ -11,10 +11,12 @@ import Hero from "@/components/Hero";
 import PromoBanner from "@/components/PromoBanner";
 import ProblemSection from "@/components/ProblemSection";
 import InvestmentOptionsSection from "@/components/InvestmentOptionsSection";
+import TechnicalSpecsSection from "@/components/TechnicalSpecsSection";
 import NextFrontierSection from "@/components/NextFrontierSection";
 import AnalyzingOpportunitySection from "@/components/AnalyzingOpportunitySection";
 import KnowBitupitaSection from "@/components/KnowBitupitaSection";
 import ParadiseAwaitsSection from "@/components/ParadiseAwaitsSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,10 +38,12 @@ export default function Home() {
       <PromoBanner />
       <ProblemSection />
       <InvestmentOptionsSection />
+      <TechnicalSpecsSection />
+      <KnowBitupitaSection />
       <NextFrontierSection />
       <AnalyzingOpportunitySection />
-      <KnowBitupitaSection />
       <ParadiseAwaitsSection />
+      <Footer />
 
       <SignupModal isOpen={isModalOpen} onClose={closeModal} />
       <WhatsAppButton />
