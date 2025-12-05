@@ -152,10 +152,10 @@ export default function ProblemSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-6 px-2 break-words"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-500 mb-6 px-2 break-words"
             style={{
-              fontFamily: '"Avenir", "Avenir Black", "Avenir Light", sans-serif',
-              fontWeight: 700,
+              fontFamily: '"Avenir Light", "Avenir", sans-serif',
+              fontWeight: 300,
             }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -11,14 +11,6 @@ export default function TechnicalSpecsSection() {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState<string>("");
 
-  // Imagens do terreno (fotos aéreas)
-  const terrainImages = [
-    "/images/bitupita/DJI_20251019210520_0107_D.jpg",
-    "/images/bitupita/DJI_20251019210524_0108_D.jpg",
-    "/images/bitupita/DJI_20251019210747_0114_D.jpg",
-    "/images/bitupita/DJI_20251019214527_0135_D.jpg",
-  ];
-
   const openImageModal = (imageSrc: string) => {
     setModalImage(imageSrc);
     setIsImageModalOpen(true);
@@ -46,7 +38,13 @@ export default function TechnicalSpecsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 font-breathing">
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4"
+            style={{
+              fontFamily: '"Avenir Light", "Avenir", sans-serif',
+              fontWeight: 300,
+            }}
+          >
             {t("technical.specs")}
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-avenir">
@@ -54,7 +52,7 @@ export default function TechnicalSpecsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="flex flex-col gap-8 lg:gap-12">
           {/* Lado Esquerdo - Informações Técnicas */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -88,7 +86,14 @@ export default function TechnicalSpecsSection() {
               <p className="text-sm text-gray-400 mb-2 font-body">
                 {t("technical.total-area.note")}
               </p>
-              <p className="text-2xl font-bold text-[#142431] font-breathing">
+              <p
+                className="text-2xl font-bold font-breathing"
+                style={{
+                  color: "#B2A28E",
+                  fontFamily:
+                    '"Avenir", "Avenir Black", "Avenir Light", sans-serif',
+                }}
+              >
                 {t("technical.total-area.value")}
               </p>
             </div>
@@ -118,7 +123,14 @@ export default function TechnicalSpecsSection() {
               <p className="text-sm text-gray-400 mb-2 font-body">
                 {t("technical.beach-front.note")}
               </p>
-              <p className="text-2xl font-bold text-[#142431] font-breathing">
+              <p
+                className="text-2xl font-bold font-breathing"
+                style={{
+                  color: "#B2A28E",
+                  fontFamily:
+                    '"Avenir", "Avenir Black", "Avenir Light", sans-serif',
+                }}
+              >
                 {t("technical.beach-front.value")}
               </p>
             </div>
@@ -145,7 +157,14 @@ export default function TechnicalSpecsSection() {
                   {t("technical.street-front")}
                 </h4>
               </div>
-              <p className="text-2xl font-bold text-[#142431] font-breathing mt-5">
+              <p
+                className="text-2xl font-bold font-breathing mt-5"
+                style={{
+                  color: "#B2A28E",
+                  fontFamily:
+                    '"Avenir", "Avenir Black", "Avenir Light", sans-serif',
+                }}
+              >
                 {t("technical.street-front.value")}
               </p>
             </div>
@@ -172,7 +191,14 @@ export default function TechnicalSpecsSection() {
                   {t("technical.depth")}
                 </h4>
               </div>
-              <p className="text-sm text-gray-300 leading-relaxed font-body">
+              <p
+                className="text-sm leading-relaxed font-body"
+                style={{
+                  color: "#B2A28E",
+                  fontFamily:
+                    '"Avenir", "Avenir Black", "Avenir Light", sans-serif',
+                }}
+              >
                 {t("technical.depth.value")}
               </p>
             </div>
@@ -193,7 +219,9 @@ export default function TechnicalSpecsSection() {
               </h3>
               <div
                 className="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden cursor-pointer group border border-gray-700/50"
-                onClick={() => openImageModal("/images/bitupita/PROJETO-TERRAVENTOS.jpg")}
+                onClick={() =>
+                  openImageModal("/images/bitupita/PROJETO-TERRAVENTOS.jpg")
+                }
               >
                 <Image
                   src="/images/bitupita/PROJETO-TERRAVENTOS.jpg"
@@ -205,40 +233,24 @@ export default function TechnicalSpecsSection() {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
-                    <svg className="w-6 h-6 text-[#142431]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    <svg
+                      className="w-6 h-6 text-[#142431]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                      />
                     </svg>
                   </div>
                 </div>
                 <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1.5 rounded-lg text-xs font-medium backdrop-blur-sm">
                   {t("investment.site-plan")}
                 </div>
-              </div>
-            </div>
-
-            {/* Fotos do Terreno */}
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-4 font-diodrum">
-                Fotos do Terreno
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {terrainImages.map((image, index) => (
-                  <div
-                    key={index}
-                    className="relative w-full h-[200px] md:h-[250px] rounded-xl overflow-hidden cursor-pointer group border border-gray-700/50"
-                    onClick={() => openImageModal(image)}
-                  >
-                    <Image
-                      src={image}
-                      alt={`Foto do terreno - ${index + 1}`}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-110"
-                      quality={90}
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-                  </div>
-                ))}
               </div>
             </div>
           </motion.div>
@@ -261,8 +273,18 @@ export default function TechnicalSpecsSection() {
               className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors duration-200 backdrop-blur-sm"
               aria-label="Fechar"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
@@ -292,4 +314,3 @@ export default function TechnicalSpecsSection() {
     </AnimatedSection>
   );
 }
-

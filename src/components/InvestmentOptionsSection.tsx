@@ -41,11 +41,10 @@ export default function InvestmentOptionsSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl text-white mb-4"
               style={{
-                fontFamily:
-                  '"Avenir", "Avenir Black", "Avenir Light", sans-serif',
-                fontWeight: 700,
+                fontFamily: '"Avenir Light", "Avenir", sans-serif',
+                fontWeight: 300,
               }}
             >
               {t("investment.title")}
@@ -71,7 +70,7 @@ export default function InvestmentOptionsSection() {
                   {/* Informações do Lote */}
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 font-diodrum">
-                      Lote {option.lotSize}
+                      {option.lotSize}
                     </h3>
                     <p className="text-base text-gray-300 leading-relaxed font-body mb-4">
                       {option.description}

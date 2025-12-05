@@ -86,7 +86,7 @@ export default function Hero({ onContactClick }: HeroProps) {
             className="mb-6 sm:mb-8"
           >
             <h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white"
+              className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl text-white"
               style={{
                 fontFamily: '"DiodrumCyrillic", "DiodrumRounded", sans-serif',
                 fontWeight: 400,

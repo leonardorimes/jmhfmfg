@@ -29,7 +29,13 @@ export default function NextFrontierSection() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 lg:mb-12 font-breathing leading-tight text-center lg:text-left px-2 break-words">
+            <h2 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8 lg:mb-12 leading-tight text-center lg:text-left px-2 break-words"
+              style={{
+                fontFamily: '"Avenir Light", "Avenir", sans-serif',
+                fontWeight: 300,
+              }}
+            >
               {t("frontier.title")}
             </h2>
 
@@ -69,14 +75,15 @@ export default function NextFrontierSection() {
             <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px]">
               <ImageSlider
                 images={[
-                  "/images/bitupita/DJI_20251019214527_0135_D.jpg",
-                  "/images/bitupita/DJI_20251019214529_0136_D.jpg",
+                  "/images/bitupita/DJI_20251019210747_0114_D.jpg",
+                  "/images/bitupita/DJI_20251019225828_0161_D.jpg",
                   "/images/bitupita/DSC06845.jpg",
                   "/images/bitupita/DSC06869.jpg",
                 ]}
                 alt="Bitupitá - Praia paradisíaca"
                 autoPlay={true}
                 autoPlayInterval={50000}
+                enableModal={true}
               />
             </div>
           </motion.div>

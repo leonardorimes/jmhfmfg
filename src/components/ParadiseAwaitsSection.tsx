@@ -34,7 +34,13 @@ export default function ParadiseAwaitsSection() {
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
         >
-           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 lg:mb-12 font-breathing px-2 break-words">
+           <h2 
+             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 md:mb-8 leading-[1.1] uppercase px-2 break-words"
+             style={{
+               fontFamily: '"Avenir Light", "Avenir", sans-serif',
+               fontWeight: 300,
+             }}
+           >
              {t("paradise.title")}
            </h2>
 
@@ -80,17 +86,20 @@ export default function ParadiseAwaitsSection() {
             transition={{ delay: 0.9, duration: 0.8 }}
           >
             <p className="text-base md:text-lg text-gray-300 leading-relaxed font-body mb-2">
-              {t("paradise.contact")}
+              {t("paradise.contact").replace("Envie um email", "").trim()}{" "}
               <a
                 href="mailto:contato@terraventos.com"
-                className="underline text-accent-400 hover:text-accent-300 font-semibold"
+                className="underline font-semibold"
+                style={{ color: "#B2A28E" }}
               >
                 Envie um email
               </a>
             </p>
             <p className="text-base md:text-lg text-gray-300 leading-relaxed font-body">
               Oferecimento:{" "}
-              <span className="underline font-semibold text-accent-400">Terra Ventos</span>
+              <span className="underline font-semibold" style={{ color: "#B2A28E" }}>
+                Terra Ventos
+              </span>
             </p>
           </motion.div>
 
