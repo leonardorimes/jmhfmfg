@@ -110,12 +110,9 @@ export default function Hero({ onContactClick }: HeroProps) {
             className="mb-8 sm:mb-10"
           >
             <div className="bg-gradient-to-br from-accent-500 to-accent-600 px-6 py-3 rounded-full shadow-2xl ring-4 ring-accent-500/30 inline-block">
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-8 bg-white/90 rounded-full"></div>
-                <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-white font-diodrum">
-                  4.300m²
-                </span>
-              </div>
+              <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-white font-diodrum">
+                4.300m²
+              </span>
             </div>
           </motion.div>
 
